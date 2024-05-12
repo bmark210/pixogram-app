@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +14,9 @@ import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 export class AppComponent {
   title = 'pixogram-app';
   isTrue = false;
+
+  ngOnInit() {
+    console.log('environment', environment);
+
+  }
 }
