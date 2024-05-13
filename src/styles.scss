@@ -10,6 +10,10 @@ body {
   z-index: 10;
   width: 12px;
   height: 12px;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 }
 
 .dark ::-webkit-scrollbar-track {
