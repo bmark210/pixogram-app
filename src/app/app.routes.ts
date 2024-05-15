@@ -1,8 +1,34 @@
 import { Routes } from '@angular/router';
-import { FeedComponent } from './pages/feed/feed.component';
-import { ExploreComponent } from './pages/explore/explore.component';
 
 export const routes: Routes = [
-  { path: '', component: FeedComponent },
-  { path: 'explore', component: ExploreComponent },
+  {
+    path: '',
+    loadComponent: () =>
+      import('./modules/layouts/dash-layout/dash-layout.component').then(
+        (m) => m.DashLayoutComponent
+      ),
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./modules/dashboard/pages/feed/feed.component').then(
+            (m) => m.FeedComponent
+          ),
+      },
+      {
+        path: 'explore',
+        loadComponent: () =>
+          import('./pages/explore/explore.component').then(
+            (m) => m.ExploreComponent
+          ),
+      },
+    ],
+  },
+  {
+    path: 'auth',
+    loadComponent: () =>
+      import('./modules/layouts/auth-layout/auth-layout.component').then(
+        (m) => m.AuthLayoutComponent
+      ),
+  },
 ];

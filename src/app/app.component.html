@@ -1,10 +1,6 @@
-<div class="relative flex w-full h-[100svh] dark:bg-black dark:text-white">
+<div class="w-full h-[100svh] dark:bg-black dark:text-white">
   @defer (on timer(2000)) {
-  <app-sidebar></app-sidebar>
-  <div class="hidden md:flex md:w-[82px] lg+:flex lg+:w-[290px]"></div>
-  <div class="w-full overflow-auto flex justify-center mb-[48px] md:m-0">
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
   } @placeholder {
   <div class="relative w-full h-full flex-1 flex items-center justify-center">
     <img

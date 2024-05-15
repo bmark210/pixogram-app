@@ -1,0 +1,39 @@
+<dss-dialog-container>
+  <dss-dialog-header>
+    <div class="flex w-full align-items-center justify-content-between gap-2">
+      <span class="text-xl font-bold">{{ title }}</span>
+      <p-button
+        icon="pi pi-times"
+        styleClass="p-button-secondary p-button-text"
+        [disabled]="$any(isProcess$ | async)"
+        (click)="cancel()"
+      ></p-button>
+    </div>
+  </dss-dialog-header>
+
+  <dss-dialog-content>
+    <div class="flex gap-3">
+      <svg-icon src="assets/images/attention.svg"></svg-icon>
+      <span>{{ text }}</span>
+    </div>
+  </dss-dialog-content>
+
+  <dss-dialog-actions *ngIf="{ loading: (isProcess$ | async) || false } as action">
+    <div class="flex gap-2">
+      <p-button
+        [styleClass]="noBtnClass"
+        [label]="noBtn"
+        [disabled]="action.loading"
+        (click)="cancel()"
+      ></p-button>
+
+      <p-button
+        [styleClass]="yesBtnClass"
+        [label]="yesBtn"
+        [disabled]="action.loading"
+        [loading]="action.loading"
+        (click)="submit()"
+      ></p-button>
+    </div>
+  </dss-dialog-actions>
+</dss-dialog-container>
