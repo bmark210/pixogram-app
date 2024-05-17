@@ -1,0 +1,12 @@
+<div class="dialog" [ngClass]="styleClass" cdkTrapFocus cdkTrapFocusAutoCapture="true">
+  <div class="dialog-header">
+    <ng-content select="dss-dialog-header"></ng-content>
+  </div>
+  <div class="dialog-content" cdkScrollable>
+    <!--tabindex="0"-->
+    <ng-content select="dss-dialog-content"></ng-content>
+  </div>
+  <div class="dialog-actions">
+    <ng-content select="dss-dialog-actions"></ng-content>
+  </div>
+</div>

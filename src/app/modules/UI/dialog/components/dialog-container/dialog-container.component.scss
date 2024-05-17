@@ -1,0 +1,31 @@
+@import "src/assets/scss/core/mixins";
+
+:host {
+  background-color: var(--surface-overlay);
+  display: flex;
+  flex-direction: row;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin: 16px;
+  max-height: calc(100% - 28px);
+  max-width: calc(100vw - 28px);
+  padding: 24px 0;
+
+  & > .dialog {
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+    max-height: calc(100vh - 28px);
+    max-width: calc(100vw - 28px);
+
+    & > .dialog-content {
+      padding: 10px 24px;
+      flex: 1 1 auto;
+      overflow: auto;
+      @include mac-scroll(var(--surface-overlay), var(--surface-500));
+    }
+  }
+}
