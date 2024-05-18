@@ -41,8 +41,6 @@ export class DialogRegistryService {
    */
   add(dialog: DialogInstance): void {
     this.dialogs.push(dialog);
-    console.log('dialogs', this.dialogs);
-
   }
 
   /**

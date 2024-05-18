@@ -1,4 +1,4 @@
-@import "src/assets/scss/core/mixins";
+@import "../../../../../../assets/scss/core/mixins";
 
 :host {
   background-color: var(--surface-overlay);
@@ -25,7 +25,7 @@
       padding: 10px 24px;
       flex: 1 1 auto;
       overflow: auto;
-      @include mac-scroll(var(--surface-overlay), var(--surface-500));
+      // @include mac-scroll(var(--surface-overlay), var(--surface-500));
     }
   }
 }

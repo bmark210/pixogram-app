@@ -1,0 +1,11 @@
+.p-listbox.dialog-list {
+  margin: -10px 0;
+
+  .p-listbox-list {
+    padding: 0;
+  }
+
+  .p-listbox-item {
+    border-bottom: 1px solid var(--surface-c);
+  }
+}

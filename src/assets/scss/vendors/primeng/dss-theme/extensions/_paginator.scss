@@ -1,0 +1,10 @@
+.p-paginator {
+  justify-content: flex-end!important;
+
+  .p-dropdown {
+    align-items: center;
+  }
+  .p-paginator-current {
+    padding: 0 1.5rem;
+  }
+}

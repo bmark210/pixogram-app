@@ -2,8 +2,8 @@
   <app-timeline></app-timeline>
   <div class="hidden lg-:block pl-16">
     <app-user-info></app-user-info>
-    <p-button (onClick)="onClick()" icon="pi pi-times" styleClass="p-button-secondary p-button-text text-white">
-      Button
-    </p-button>
+    <div class="h-16 p-4 flex justify-between items-center">
+    <button (click)="openModal()" class="rounded-md bg-white text-black px-3 py-2">OpenModal</button>
+    <button (click)="closeModal()" class="rounded-md bg-white text-black px-3 py-2">CloseModal</button></div>
   </div>
 </div>

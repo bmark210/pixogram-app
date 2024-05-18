@@ -1,0 +1,21 @@
+/* Customizations to the designer theme should be defined here */
+@use 'sass:math';
+
+.w-full > input {
+  width: 100%;
+}
+
+.p-button-loading:not(.p-button-icon-only) .p-icon-wrapper {
+  margin-left: .5rem;
+}
+
+// TODO палитра цветов
+.p-avatar.user, .user > .p-badge {
+  background: #93C5FD;
+  color: #1c2127;
+}
+
+.p-overlay-badge .p-badge {
+    right: -2px;
+    padding: 0 0.3rem;
+}

@@ -1,0 +1,23 @@
+@use 'sass:math';
+
+.p-overlaypanel.sidebar-panel {
+  background: #071426;
+  color: #FFFFFFDE;
+  box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+  margin-left: 50px;
+  margin-top: -42px;
+
+  .p-overlaypanel-content {
+    border: 1px solid #0B213F;
+    border-radius: var(--border-radius);
+    padding: calc(1rem - 1px);
+  }
+
+  &:after {
+    border: none;
+  }
+
+  &:before {
+    border: none;
+  }
+}

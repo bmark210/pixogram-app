@@ -1,0 +1,55 @@
+@import "../../../../../../assets/scss/core/mixins";
+
+.p-multiselect-items-wrapper {
+  @include mac-scroll(var(--surface-overlay), var(--surface-500));
+}
+
+.p-multiselect-item .p-checkbox {
+  pointer-events: none;
+}
+
+// p-multiselect with markers
+.p-multiselect-item {
+  .marker-change {
+    display: flex;
+    width: 100%;
+
+    .marker-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      max-height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .markers {
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    .marker-title {
+      position: absolute;
+      left: 40px;
+      top: 11px;
+    }
+  }
+
+  &:has(.p-checkbox + .marker-change) {
+    min-height: 40px;
+  }
+
+  .p-checkbox:has(+ .marker-change) {
+    position: absolute;
+    top: 0;
+    left: 14px;
+    height: 100%;
+    max-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

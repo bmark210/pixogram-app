@@ -1,0 +1,21 @@
+.p-overlay {
+  background: var(--surface-overlay);
+  box-shadow: 0 2px 12px 0 #0000001A;
+  border-radius: var(--border-radius);
+
+  &.dark {
+    background: #071426;
+    color: #FFFFFFDE;
+    box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+
+    .p-overlay-content {
+      border: 1px solid #0B213F;
+      border-radius: var(--border-radius);
+      padding: calc(1rem - 1px);
+    }
+  }
+}
+
+.p-component-overlay {
+  background-color: rgba(0, 0, 0, 0.1);
+}

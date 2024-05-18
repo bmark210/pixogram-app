@@ -1,0 +1,5 @@
+@import "../../../../../../assets/scss/core/mixins";
+
+.p-dropdown-items-wrapper {
+  @include mac-scroll(var(--surface-overlay), var(--surface-500));
+}

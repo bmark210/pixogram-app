@@ -1,0 +1,10 @@
+.p-inputgroup > .p-inputwrapper:last-child > .p-component {
+  border-top-left-radius: 0!important;
+  border-bottom-left-radius: 0!important;
+}
+
+.p-inputgroup-addon {
+  svg.files {
+   filter: grayscale(100%);
+  }
+}

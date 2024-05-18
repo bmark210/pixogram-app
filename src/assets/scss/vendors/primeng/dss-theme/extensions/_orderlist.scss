@@ -1,0 +1,49 @@
+.p-orderlist.hidden-controls {
+  .p-orderlist-controls {
+      display: none;
+  }
+
+  .p-orderlist-list {
+    border: none;
+    border-radius: 0;
+
+    .p-orderlist-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      svg-icon[src*="dots.svg"] {
+        display: flex;
+        visibility: hidden;
+      }
+
+      &:hover {
+        svg-icon[src*="dots.svg"] {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.p-orderlist-item {
+  &.cdk-drag-preview {
+    svg-icon[src*="dots.svg"] {
+      visibility: hidden;
+    }
+  }
+}
+
+.p-orderlist.dialog-order {
+  overflow-y: hidden;
+  margin: -10px 0;
+
+  .p-orderlist-list {
+    padding: 0;
+    overflow-y: hidden;
+  }
+
+  .p-orderlist-item:not(:last-child) {
+    border-bottom: 1px solid var(--surface-c);
+  }
+}

@@ -1,0 +1,20 @@
+.dialog-header .p-button {
+  display: flex;
+  align-self: center;
+  width: 18px;
+  height: 18px;
+
+  &:enabled:focus {
+    box-shadow: 0 0 0.2rem!important;
+  }
+}
+
+.p-buttonset.markers {
+  .p-button  + .p-button {
+    margin-left: -1px;
+  }
+
+  .p-button.p-button-secondary, .p-button.p-button-secondary:hover {
+    border-color: #ced4da;
+  }
+}

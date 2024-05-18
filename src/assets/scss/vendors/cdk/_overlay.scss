@@ -1,0 +1,31 @@
+.cdk-overlay-pane,
+.cdk-overlay-backdrop,
+.cdk-overlay-connected-position-bounding-box,
+.cdk-global-overlay-wrapper,
+.cdk-overlay-container {
+  z-index: 999;
+}
+
+.cdk-global-overlay-wrapper {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+
+  & > .cdk-overlay-pane {
+    height: auto;
+    flex: none;
+  }
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.cdk-global-scrollblock {
+  overflow: hidden;
+}
+
+html.cdk-global-scrollblock {
+  overflow-y: auto;
+}

@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { TimelineComponent } from '../../../../components/timeline/timeline.component';
 import { UserInfoComponent } from '../../../../components/user-info/user-info.component';
 import { ButtonModule } from 'primeng/button';
-import { DialogRegistryService } from '../../../UI/dialog/services/dialog-registry.service';
 import { Overlay, OverlayModule } from '@angular/cdk/overlay';
+import { CommonDialogService } from '../../../UI/dialog-common/services/common-dialog.service';
+import { of } from 'rxjs';
 import { DialogService } from '../../../UI/dialog/services/dialog.service';
-import { MyCustomModalComponent } from '../../../UI/dialog-common/components/my-custom-modal/my-custom-modal.component';
 
 @Component({
   selector: 'app-feed',
@@ -22,9 +22,13 @@ import { MyCustomModalComponent } from '../../../UI/dialog-common/components/my-
   styleUrl: './feed.component.scss'
 })
 export class FeedComponent {
-  constructor(private dialog: DialogService, private registerDialog: DialogRegistryService, private overlay: Overlay) { }
-  onClick() {
-    this.dialog.open({component: MyCustomModalComponent});
+  constructor(private commonDialogService: CommonDialogService, private dialog: DialogService) { }
+  openModal() {
+    this.commonDialogService.confirmAction({text: 'Are you sure?', isProcess$: of(true)});
+  }
+
+  closeModal() {
+    this.dialog.close();
   }
 }
 
