@@ -24,6 +24,16 @@ export class DialogRegistryService {
       );
   }
 
+
+   /**
+   * @name showDialogs
+   * @description показ списка зарегестрированных диалогов
+   */
+  showDialogs(): void {
+    console.log('showDialogs', this.dialogs);
+
+  }
+
   /**
    * @name add
    * @description регистрация диалога
@@ -31,6 +41,8 @@ export class DialogRegistryService {
    */
   add(dialog: DialogInstance): void {
     this.dialogs.push(dialog);
+    console.log('dialogs', this.dialogs);
+
   }
 
   /**

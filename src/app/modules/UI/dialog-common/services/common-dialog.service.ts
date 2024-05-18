@@ -19,6 +19,8 @@ export class CommonDialogService {
     config: UnsavedDataDialogConfig,
     beforeClose?: (res: UnsavedDataDialogResult) => Promise<unknown>,
   ): DialogRef {
+    console.log('config', config);
+
     return this.dialog.open({
       component: UnsavedDataDialogComponent,
       data: config,

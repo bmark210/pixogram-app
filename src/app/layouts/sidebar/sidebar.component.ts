@@ -4,6 +4,7 @@ import { HomeIconComponent } from '../../components/common/icons/home-icon/home-
 import { CreateComponent } from '../../components/common/icons/create/create.component';
 import { ExploreIconComponent } from '../../components/common/icons/explore-icon/explore-icon.component';
 import { Component } from '@angular/core';
+import { SvgIconComponent } from 'angular-svg-icon';
 
 @Component({
   selector: 'app-sidebar',

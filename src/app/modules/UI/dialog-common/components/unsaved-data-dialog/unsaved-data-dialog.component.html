@@ -1,7 +1,7 @@
 <app-dialog-container>
   <app-dialog-header>
     <div class="flex w-full align-items-center justify-content-between gap-2">
-      <span class="text-xl font-bold">{{ 'ui.dialogs.save-changes-title' | translate }}</span>
+      <span class="text-xl font-bold">{{ 'ui.dialogs.save-changes-title' }}</span>
       <p-button
         icon="pi pi-times"
         styleClass="p-button-secondary p-button-text"
@@ -13,7 +13,7 @@
 
   <app-dialog-content>
     <div class="flex mt-2 mb-2 gap-3">
-      <svg-icon src="assets/images/attention.svg"></svg-icon>
+      <!-- <img src="assets/images/attention.svg"/> -->
       <span [innerHTML]="message"></span>
     </div>
   </app-dialog-content>

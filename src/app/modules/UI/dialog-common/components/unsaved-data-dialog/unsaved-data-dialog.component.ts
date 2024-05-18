@@ -1,16 +1,15 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { DialogBase } from '../../../dialog/models';
-import { DialogService } from '../../../dialog/services/dialog.service';
-import { DIALOG_DATA_TOKEN } from '../../../dialog/tokens/dialog-data.token';
+import { ButtonModule } from 'primeng/button';
+import { SvgIconComponent } from 'angular-svg-icon';
+import { AsyncPipe } from '@angular/common';
 import { DialogContentComponent } from '../../../dialog/components/dialog-content/dialog-content.component';
 import { DialogContainerComponent } from '../../../dialog/components/dialog-container/dialog-container.component';
 import { DialogHeaderComponent } from '../../../dialog/components/dialog-header/dialog-header.component';
 import { DialogActionsComponent } from '../../../dialog/components/dialog-actions/dialog-actions.component';
-import { ButtonModule } from 'primeng/button';
-import { TranslateModule } from '@ngx-translate/core';
-import { SvgIconComponent } from 'angular-svg-icon';
-import { AsyncPipe } from '@angular/common';
+import { DialogBase } from '../../../dialog/models';
+import { DialogService } from '../../../dialog/services/dialog.service';
+import { DIALOG_DATA_TOKEN } from '../../../dialog/tokens/dialog-data.token';
 
 export interface UnsavedDataDialogConfig {
   isProcess: Observable<boolean>;
@@ -30,8 +29,6 @@ export interface UnsavedDataDialogResult {
     DialogHeaderComponent,
     DialogActionsComponent,
     ButtonModule,
-    TranslateModule,
-    SvgIconComponent,
     AsyncPipe,
   ],
   templateUrl: './unsaved-data-dialog.component.html',

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
+// import { SvgIconComponent } from 'angular-svg-icon';
 
 @Component({
   selector: 'app-root',

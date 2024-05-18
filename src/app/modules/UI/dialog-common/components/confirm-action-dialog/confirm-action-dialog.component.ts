@@ -3,14 +3,23 @@ import { DialogContentComponent } from '../../../dialog/components/dialog-conten
 import { DialogContainerComponent } from '../../../dialog/components/dialog-container/dialog-container.component';
 import { DialogHeaderComponent } from '../../../dialog/components/dialog-header/dialog-header.component';
 import { DialogService } from '../../../dialog/services/dialog.service';
-import { ConfirmActionDialogConfig } from '../../../../../components/UI/dialog-common/components/confirm-action-dialog/confirm-action-dialog.component';
 import { DIALOG_DATA_TOKEN } from '../../../dialog/tokens/dialog-data.token';
 import { Observable, of } from 'rxjs';
 import { DialogActionsComponent } from '../../../dialog/components/dialog-actions/dialog-actions.component';
 import { SvgIconComponent } from 'angular-svg-icon';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
+
+export interface ConfirmActionDialogConfig {
+  text: string;
+  title?: string;
+  yesBtn?: string;
+  noBtn?: string;
+  yesBtnClass?: string;
+  noBtnClass?: string;
+  isProcess$: Observable<boolean>;
+}
 
 @Component({
   selector: 'app-confirm-action-dialog',
@@ -21,9 +30,8 @@ import { AsyncPipe } from '@angular/common';
     DialogHeaderComponent,
     DialogActionsComponent,
     ButtonModule,
-    TranslateModule,
-    SvgIconComponent,
-    AsyncPipe
+    AsyncPipe,
+    NgIf
   ],
   templateUrl: './confirm-action-dialog.component.html',
   styleUrl: './confirm-action-dialog.component.scss',
