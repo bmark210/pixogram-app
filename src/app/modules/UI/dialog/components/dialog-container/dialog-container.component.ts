@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-dialog-container',
+  selector: 'dss-dialog-container',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './dialog-container.component.html',

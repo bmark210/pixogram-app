@@ -1,32 +1,32 @@
-<app-dialog-container>
-  <app-dialog-header>
+<dss-dialog-container>
+  <dss-dialog-header>
     <div class="flex w-full align-items-center justify-content-between gap-2">
       <span class="text-xl font-bold">{{ title }}</span>
       <p-button
         icon="pi pi-times"
         styleClass="p-button-secondary p-button-text"
-        [disabled]="$any(isProcess$ | async)"
         (click)="cancel()"
       ></p-button>
-    </div>
-  </app-dialog-header>
+      <!-- [disabled]="$any(isProcess$ | async)" -->
 
-  <app-dialog-content>
+    </div>
+  </dss-dialog-header>
+
+  <dss-dialog-content>
     <div class="flex gap-3">
-      <!-- <img src="assets/images/attention.svg"/> -->
+      <svg-icon svgClass="w-6 h-6" icon="attention" src="assets/images/svg/attention.svg"></svg-icon>
       <span>{{ text }}</span>
-      <p class="text-red-500">hngghnghnhgnhg</p>
     </div>
-  </app-dialog-content>
+  </dss-dialog-content>
 
-  <app-dialog-actions *ngIf="{ loading: (isProcess$ | async) || false } as action">
+  <dss-dialog-actions *ngIf="{ loading: (isProcess$ | async) || false } as action">
     <div class="flex gap-2">
       <p-button
         [styleClass]="noBtnClass"
         [label]="noBtn"
-        [disabled]="action.loading"
         (click)="cancel()"
       ></p-button>
+      <!-- [disabled]="action.loading" -->
 
       <p-button
         [styleClass]="yesBtnClass"
@@ -36,5 +36,5 @@
         (click)="submit()"
       ></p-button>
     </div>
-  </app-dialog-actions>
-</app-dialog-container>
+  </dss-dialog-actions>
+</dss-dialog-container>

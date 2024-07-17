@@ -1,0 +1,42 @@
+<div class="create-post-content" [ngClass]="getSelection() == SelectionEnum.AddInfo ? 'has-left-rail' : ''">
+  @if (getSelection() == SelectionEnum.Uploading){
+    <div (dragover)="$event.preventDefault()" (drop)="dragUplodFiles($event)" class="w-full h-full">
+      <div class="w-full h-full p-6">
+        <div class="flex w-full h-full items-center justify-center gap-2">
+          <svg-icon
+            class="mt-4"
+            svgClass="w-32 h-32"
+            src="assets/images/svg/media.svg"
+          ></svg-icon>
+        </div>
+        <div class="w-full mt-4">
+          <p class="text-center font-normal text-xl">
+            Drag photos and videos here
+          </p>
+        </div>
+        <div class="flex items-center justify-center mt-4">
+          <p-button (click)="input.click()" [label]="'Select from computer'"></p-button>
+          <input #input type="file" (change)="handleUploadFiles($event)" multiple class="hidden">
+        </div>
+      </div>
+    </div>
+  } @else if (getSelection() == SelectionEnum.Redaction || getSelection() == SelectionEnum.AddInfo) {
+    <div class="w-full h-full flex">
+      <div  *ngIf="viewPhotos.length > 0" class=" flex">
+          <p-carousel class="w-full h-full" [value]="viewPhotos" [numVisible]="1" [numScroll]="1" [showIndicators]="viewPhotos.length > 1">
+            <ng-template pTemplate="item" let-photo>
+              <img [src]="photo" alt="Photo" class="w-full h-full" />
+            </ng-template>
+          </p-carousel>
+
+      </div>
+      @if(getSelection() == SelectionEnum.AddInfo) {
+        <div class="creation-block">
+          <p class="text-center font-normal text-xl text-black">
+            Add some info
+          </p>
+        </div>
+      }
+    </div>
+  }
+</div>

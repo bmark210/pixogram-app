@@ -42,7 +42,6 @@ export class DialogService {
       parent: this.injector,
     });
 
-    // очищаем фокус, если мы открываем окно со страницы (нет других открытых окон)
     if (!this.dialogRegistry.hasOpenedDialogs()) {
       (this.document.activeElement as HTMLElement)?.blur();
     }
@@ -88,21 +87,25 @@ export class DialogService {
         .keydownEvents()
         .pipe(filter((key) => key.keyCode === ESCAPE && !withModifier(key)))
         .subscribe(() => {
-          this.dialogRegistry.dismissById(dialog.id);
-          sub.unsubscribe();
+          this.close();
+          // sub.unsubscribe();
         });
     }
     if (config.closeOnClickOutside) {
-      const clickSub = overlayRef.backdropClick().subscribe(() => {
-        this.dialogRegistry.dismissById(dialog.id);
-        clickSub.unsubscribe();
-      });
+      // const sub = overlayRef.outsidePointerEvents().subscribe((x) => {
+        // console.log('x',x.target);
+
+        // this.close();
+        // sub.unsubscribe();
+      // });
     }
     this.dialogRegistry.add(dialog);
     return this.getDialogRef(dialog);
   }
 
   close(result?: unknown, group?: string): void {
+    console.log('функция из сервиса диалогов 🔥');
+
     this.dialogRegistry.closeLast(result, group);
   }
 

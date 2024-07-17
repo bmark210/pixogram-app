@@ -1,7 +1,7 @@
 import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-dialog-header',
+  selector: 'dss-dialog-header',
   standalone: true,
   imports: [],
   templateUrl: './dialog-header.component.html',

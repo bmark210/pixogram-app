@@ -20,7 +20,7 @@ $textSecondaryColor: #6c757d;
 
 /// Background of a highlighted item
 /// @group general - $primaryColor;
-$highlightBg: #EFF6FF;
+$highlightBg: #0095F6;
 
 /// Text color of a highlighted item
 /// @group general - $primaryTextColor
@@ -29,6 +29,10 @@ $highlightTextColor: $primaryColor;
 /// Radius of the corners
 /// @group general
 $borderRadius: 6px;
+
+/// Radius of the modal corners
+/// @group general
+$borderRadiusModal: 16px;
 
 /// Duration of the property transitions
 /// @group general

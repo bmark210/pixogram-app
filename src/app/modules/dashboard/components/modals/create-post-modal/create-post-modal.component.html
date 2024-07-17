@@ -1,0 +1,30 @@
+<dss-dialog-container>
+  <dss-dialog-header [divider]="true">
+    @if(currentSection.value != selectionEnum.Uploading){
+    <div class="flex items-center justify-start gap-2">
+      <button (click)="prevStep()">
+        <svg-icon
+          [src]="'assets/images/svg/arrow.svg'"
+          svgClass="w-6 h-6 "
+        ></svg-icon>
+      </button>
+    </div>
+    }
+    <div class="flex w-full items-center justify-center gap-2">
+      <span class="text-xl font-normal">Create new post</span>
+    </div>
+    @if(currentSection.value != selectionEnum.Uploading){
+    <button (click)="nextStep()" class="flex items-center justify-end gap-2">
+      <p class="text-blue-500 font-normal text-lg">Next</p>
+    </button>
+    }
+  </dss-dialog-header>
+
+  <dss-dialog-content>
+    <app-action-steps
+      [currentSection]="currentSection"
+      [clearTrigger$]="clearTrigger$"
+    ></app-action-steps>
+  </dss-dialog-content>
+
+</dss-dialog-container>

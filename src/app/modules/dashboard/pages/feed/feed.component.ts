@@ -4,9 +4,13 @@ import { TimelineComponent } from '../../../../components/timeline/timeline.comp
 import { UserInfoComponent } from '../../../../components/user-info/user-info.component';
 import { ButtonModule } from 'primeng/button';
 import { Overlay, OverlayModule } from '@angular/cdk/overlay';
-import { CommonDialogService } from '../../../UI/dialog-common/services/common-dialog.service';
-import { of } from 'rxjs';
-import { DialogService } from '../../../UI/dialog/services/dialog.service';
+import {Dialog, DIALOG_DATA, DialogModule} from '@angular/cdk/dialog';
+import { ConfirmActionDialogComponent } from '../../../UI/dialog-common/components/confirm-action-dialog/confirm-action-dialog.component';
+import { DialogContainerComponent } from '../../../UI/dialog/components/dialog-container/dialog-container.component';
+import { DialogComponent } from '../../../dialog/dialog.component';
+// import { DynamicDialogCommonService } from '../../../UI/dialog-common/services/dynamic-dialog-common.service';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
+
 
 @Component({
   selector: 'app-feed',
@@ -15,20 +19,25 @@ import { DialogService } from '../../../UI/dialog/services/dialog.service';
     CommonModule,
     TimelineComponent,
     UserInfoComponent,
-    ButtonModule,
-    OverlayModule
+    // DynamicDialogModule,
+    // DialogModule,
+    ButtonModule
   ],
+  providers: [DialogService],
   templateUrl: './feed.component.html',
   styleUrl: './feed.component.scss'
 })
 export class FeedComponent {
-  constructor(private commonDialogService: CommonDialogService, private dialog: DialogService) { }
-  openModal() {
-    this.commonDialogService.confirmAction({text: 'Are you sure?', isProcess$: of(true)});
-  }
+  // constructor(private commonDialogService: DynamicDialogCommonService) { }
+  // openConfirmModal(): void {
+  //   this.commonDialogService.confirmAction({
+  //     text: 'Are you sure?',
+  //     isProcess$: of(true),
+  //   });
+  // }
 
-  closeModal() {
-    this.dialog.close();
+  openConfirmModal() {
+    // this.commonDialogService.show();
   }
 }
 

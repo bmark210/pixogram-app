@@ -3,13 +3,13 @@ import { DialogService } from '../../dialog/services/dialog.service';
 import {
   UnsavedDataDialogComponent,
   UnsavedDataDialogConfig,
-  UnsavedDataDialogResult,
 } from '../components/unsaved-data-dialog/unsaved-data-dialog.component';
 import { DialogRef } from '../../dialog/models';
 import {
   ConfirmActionDialogComponent,
   ConfirmActionDialogConfig,
 } from '../components/confirm-action-dialog/confirm-action-dialog.component';
+import { UnsavedDataDialogResult } from '../../../dashboard/components/modals/interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class CommonDialogService {
@@ -21,8 +21,12 @@ export class CommonDialogService {
   ): DialogRef {
     return this.dialog.open({
       component: UnsavedDataDialogComponent,
+      id: 'warning-unsaved-data',
       data: config,
       onClose: beforeClose,
+      closeOnClickOutside: false,
+      closeOnEsc: false,
+      isSingle: true,
     });
   }
 

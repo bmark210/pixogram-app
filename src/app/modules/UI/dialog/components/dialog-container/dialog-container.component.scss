@@ -4,12 +4,10 @@
   background-color: var(--surface-overlay);
   display: flex;
   flex-direction: row;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-modals);
   overflow: hidden;
-  margin: 16px;
   max-height: calc(100% - 28px);
   max-width: calc(100vw - 28px);
-  padding: 24px 0;
 
   & > .dialog {
     display: flex;
@@ -22,10 +20,10 @@
     max-width: calc(100vw - 28px);
 
     & > .dialog-content {
-      padding: 10px 24px;
+      // padding: 10px 24px;
       flex: 1 1 auto;
       overflow: auto;
-      // @include mac-scroll(var(--surface-overlay), var(--surface-500));
+      @include mac-scroll(var(--surface-overlay), var(--surface-500));
     }
   }
 }

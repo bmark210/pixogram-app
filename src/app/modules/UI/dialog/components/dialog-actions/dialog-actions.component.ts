@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-dialog-actions',
+  selector: 'dss-dialog-actions',
   standalone: true,
   imports: [],
   templateUrl: './dialog-actions.component.html',

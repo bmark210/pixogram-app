@@ -1,10 +1,10 @@
 import { ComponentType } from '@angular/cdk/portal';
 import { Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { isEmpty, isFunction } from 'lodash';
 import { filter } from 'rxjs';
 import { DialogInstance } from '../models/dialog-instance';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()
 @Injectable({ providedIn: 'root' })
@@ -22,16 +22,6 @@ export class DialogRegistryService {
           .filter((dialog) => !dialog.stayAfterNavigate)
           .forEach((dlg) => this.dismiss(dlg)),
       );
-  }
-
-
-   /**
-   * @name showDialogs
-   * @description показ списка зарегестрированных диалогов
-   */
-  showDialogs(): void {
-    console.log('showDialogs', this.dialogs);
-
   }
 
   /**
@@ -159,6 +149,8 @@ export class DialogRegistryService {
    * @private
    */
   private close(dialog: DialogInstance, result?: unknown): void {
+    // console.log('result', result);
+
     if (isEmpty(dialog.onClosePromise)) {
       dialog.onClosePromise = isFunction(dialog.onClose)
         ? dialog.onClose(result)
