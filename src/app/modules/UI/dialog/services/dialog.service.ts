@@ -81,7 +81,7 @@ export class DialogService {
       group: dialogGroup,
       id: dialogId,
     } as DialogInstance;
-
+ 
     if (config.closeOnEsc !== false) {
       const sub = overlayRef
         .keydownEvents()
